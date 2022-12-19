@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background: url(./assets/foodie.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+.randomContainer{
+    display: flex;
+    justify-content: center;
+}
+.randomImage{
+    width: 350px;
+    border-radius: 15px 15px 0 0;
+}
+.text{
+    opacity: 0.8;
+}
+.title{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+.result{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+.container{
+    min-height: 100vh;
+}
+.mealWrapper{
+    padding: 2rem;
+    text-align: center;
+}
+.mealSearch{
+    margin: 2rem 0;
+}
+.mealSearch i{
+    font-size: 1rem;
+}
+.search{
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+}
+.search-control, .search-btn{
+    width: 100%;
+    margin: 5px;
+}
+.search-control{
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: black;
+    border-radius: 20px;
+}
+.search-control::placeholder{
+    color: black;
+}
+.search-btn{
+    border: 0.01px solid rgb(61, 61, 61);
+    width: 45px;
+    height: 40px;
+    font-size: 1.5rem;
+    background: black;
+    color: #fff;
+    border-radius: 50px;
+    transition: all 0.4s linear;
+}
+.search-btn:hover{
+    background: crimson;
+}
+.mealOutput{
+    margin-top: 4rem;
+}
+#meal{
+    margin: 2.4rem 0;
+}
+.mealItem{
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    margin: 2rem 0;
+}
+.mealImage img{
+    width: 100%;
+    display: block;
+}
+.mealName h3{
+    font-size: 1.4rem;
+    color: white;
+}
+.IngredientButton{
+    text-decoration: none;
+    color: #fff;
+    background: crimson;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 20px;
+    transition: all 0.4s linear;
+}
+.IngredientButton:hover{
+    background: black;
+}
+/* MEAL DETAILS  */
+.mealDetails{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: crimson;
+    opacity: 97%;
+    border-radius: 2rem;
+    width: 95%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    padding: 1rem 0;
+}
+.mealDetails::-webkit-scrollbar{
+    width: 10px;
+}
+.mealDetails::-webkit-scrollbar-thumb{
+    background: #f0f0f0;
+    border-radius: 1rem;
+}
+/* FOR JAVASCRIPT  */
+.showIngredient{
+    display: block;
+}
+.mealDetailsContent{
+    margin: 2rem;
+}
+.mealDetailsContent p:not(.IngredientCategory){
+    padding: -16rem 0;
+}
+.closeButton{
+    position: sticky;
+    left: 40rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.IngredientTitle{
+    letter-spacing: 1px;
+    padding-bottom: 2rem;
+    font-size: 60px;
+}
+.IngredientCategory{
+    background: rgb(0, 0, 0);
+    font-weight: 600;
+    color: rgb(197, 64, 64);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+.justColorChange{
+    color: black;
+}
+.Ingredients{
+    padding: 1rem 0;
+}
+.IngredientMealImage img{
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    margin: 0 auto;
+    display: block;
+}
+/*  */
+.notFound{
+    grid-template-columns: 1fr!important;
+    color: crimson;
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Media Queries */
+@media screen and (min-width: 600px){
+    .search{
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* .randomImage{
+        width: auto;
+    } */
+}
+
+@media screen and (min-width: 768px){
+    #meal{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .mealItem{
+        margin: 0;
+    }
+    .mealDetails{
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    #meal{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
